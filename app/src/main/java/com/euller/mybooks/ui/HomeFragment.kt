@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.euller.mybooks.R
 import com.euller.mybooks.databinding.FragmentHomeBinding
 import com.euller.mybooks.ui.adapter.BookAdapter
-import com.euller.mybooks.viewmodels.HomeViewModel
+import com.euller.mybooks.ui.listener.BookListener
+import com.euller.mybooks.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 
@@ -33,6 +34,8 @@ class HomeFragment : Fragment() {
 
         binding.recyclerviewBooks.adapter = adapter
 
+        attachListener()
+
         viewModel.getAllBooks()
 
         setObserves()
@@ -43,6 +46,15 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun attachListener() {
+        adapter.attachListener(object : BookListener {
+            override fun onClick(id: Int) {
+                findNavController().navigate(R.id.navigation_details)
+            }
+
+        })
     }
 
     private fun setObserves() {

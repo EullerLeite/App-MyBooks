@@ -1,4 +1,4 @@
-package com.euller.mybooks.viewmodels
+package com.euller.mybooks.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
