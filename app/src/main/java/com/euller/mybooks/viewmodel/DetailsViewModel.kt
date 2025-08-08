@@ -8,7 +8,7 @@ import com.euller.mybooks.repositore.BookRepository
 
 class DetailsViewModel : ViewModel() {
 
-    private val repository: BookRepository = BookRepository()
+    private val repository: BookRepository = BookRepository.getInstance()
 
     private val _book = MutableLiveData<BookEntity>()
     val book: LiveData<BookEntity> = _book
