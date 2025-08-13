@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.euller.mybooks.entity.BookEntity
 import com.euller.mybooks.helper.DatabaseConstants
 
-class BookDatabaseHelper(context: Context) :
+/*class BookDatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -74,4 +74,4 @@ class BookDatabaseHelper(context: Context) :
             BookEntity(20, "Os Miseráveis", "Victor Hugo", false, "Romance")
         )
     }
-}
+}*/
